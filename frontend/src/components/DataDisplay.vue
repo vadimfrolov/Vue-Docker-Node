@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ message }}</h1>
-    <h2>{{ hi }}</h2>
+    <h2>hi</h2>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     };
   },
   mounted() {
-    fetch('http://backend:3000/api/data')
+    fetch('http://localhost:3000/api/data')
       .then(response => response.json())
       .then(data => {
         this.message = data.message;
