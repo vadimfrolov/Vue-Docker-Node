@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace
+    working_dir: /workspace/backend
+    command: npm start
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace
+    working_dir: /workspace/frontend
+    command: npm run serve
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend

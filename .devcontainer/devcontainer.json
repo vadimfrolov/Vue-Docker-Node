@@ -1,0 +1,11 @@
+{
+  "name": "Vue.js and Node.js Dev Container",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "frontend",
+  "workspaceFolder": "/app",
+  "postCreateCommand": "npm install",
+  "runServices": [
+    "frontend",
+    "backend"
+  ]
+}
